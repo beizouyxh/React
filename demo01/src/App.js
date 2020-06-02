@@ -12,7 +12,29 @@ class App extends Component{
         //----------主要 代码--------end
     }
 }
+  //
+  componentWillMount(){
+    console.log('1-componentWillMount----组件将要挂载到页面的时刻')
+  }
+  componentDidMount(){
+    console.log('3-componentDidMount----组件挂载完成的时刻执行')
+  }
+
+
+  //shouldComponentUpdate返回true才会被执行。
+  componentWillUpdate(){
+  console.log('1-componentWillUpdate---组件更新前，shouldComponentUpdate函数之后执行')
+  return true
+  }
+  componentWillUpdate(){
+    console.log('2-componentWillUpdate')
+  }
+  componentDidUpdate(){
+    console.log('4-componentDidUpdate----组件更新之后执行')
+  }
+  
   render(){
+    console.log('render---组件挂载中.......')
     return  (
       <Fragment>
           <div>

@@ -5,6 +5,15 @@ class Item extends Component {
         super(props)
         this.handleClick=this.handleClick.bind(this)
     }
+    //1. 组件第一次存在于dom中，函数是不会执行的
+    //如果已经存在于dom中，函数才会执行
+    componentWillReceiveProps(){
+       console.log('child - componentWillReceiveProps')
+    }
+     //只有在删除的时候执行
+    componentWillUnmount(){
+        console.log('child-componentWillUnmount')
+    }
     render() { 
         return (
          <div onClick={this.handleClick}>
